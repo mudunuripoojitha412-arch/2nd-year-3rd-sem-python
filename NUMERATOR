@@ -1,0 +1,17 @@
+def safe_divide(numerator, denominator):
+    try:
+        # Try to divide
+        result = numerator / denominator
+        print(f"The result of {numerator} / {denominator} is: {result}")
+    except ZeroDivisionError:
+        # Handle division by zero
+        print(f"Error: Cannot divide by zero! Attempted {numerator} / {denominator}")
+    except TypeError:
+        # Handle wrong data types (e.g., string)
+        print("Error: Invalid input types. Please provide numbers.")
+    
+# Demonstrating error handling
+print("\n--- Error Handling Demonstration ---")
+safe_divide(10, 2)       # Correct
+safe_divide(10, 0)       # Division by zero
+safe_divide(5, "abc")    # Type error
